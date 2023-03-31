@@ -8,7 +8,7 @@ viewed.add(array[i]);
 
 if(viewed.has(num)){
   return true;
-}
+} 
   }
 return false;
 }
@@ -26,6 +26,7 @@ return false;
   Iterate through the array to find the num.
   Check if we have already viewed the array and return to true if we have.
   Add the current num to the set .
+  Return false if no pair is found.
 
 */
 
