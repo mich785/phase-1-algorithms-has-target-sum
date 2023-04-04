@@ -1,15 +1,11 @@
 function hasTargetSum(array, target) {
-  let viewed = new Set();
 
   for (let i = 0; i < array.length; i++) {
-    let num = target - array[i];
-
-viewed.add(array[i]);
-
-if(viewed.has(num)){
-  return true;
-} 
+    let complement = target - array[i];
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === complement) return true;
   }
+}
 return false;
 }
 
@@ -22,12 +18,10 @@ return false;
 */
 
 /*
-  Create a new set that store the already viewed numbers in the array.
-  Iterate through the array to find the num.
-  Check if we have already viewed the array and return to true if we have.
-  Add the current num to the set .
-  Return false if no pair is found.
-
+Iterate over the array of numbers
+For the current number find a complementary number that adds up to the target.
+Iterate over the rest of the array.
+Return true if any of the remaining numbers is a complement
 */
 
 // You can run `node index.js` to view these console logs
